@@ -1,20 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useParams, useNavigate } from 'react-router-dom';
 import App from './App';
-import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
+import Navbar from './components/Navbar';
+import ProductDetails from './components/ProductDetails';
 
 const RoutesComponent: React.FC = () => {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route 
-          path="/product/:id" 
-          element={
-            <ProductDetailsWrapper />
-          } 
-        />
+        <Route path="/product/:id" element={<ProductDetailsWrapper />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
@@ -34,3 +31,4 @@ const ProductDetailsWrapper: React.FC = () => {
 };
 
 export default RoutesComponent;
+
